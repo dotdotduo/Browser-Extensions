@@ -1,14 +1,13 @@
-alert("What's up!");
+if (window.top === window) {
 
-var r, regex;
-var url = window.location.href;
+	var r, regex;
+	var url = window.location.href;
 
-alert(url);
+	regex = new RegExp("^http://(.*)\\B%23(\\w+)(.*)", "i");
+	r = regex.exec(url);
 
-regex = new RegExp("^http://(.*)\\B%23(\\w\\w+)(.*)", "i");
-r = regex.exec(url);
-
-if(r) {
-  url = url.replace(regex, "http://search.tagboard.com/$2");
-  window.location = url;
+	if(r) {
+	  url = url.replace(regex, "http://search.tagboard.com/$2");
+	  window.location = url;
+	}
 }

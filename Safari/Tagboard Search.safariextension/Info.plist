@@ -22,10 +22,6 @@
 	<dict>
 		<key>Scripts</key>
 		<dict>
-			<key>End</key>
-			<array>
-				<string>redirect.js</string>
-			</array>
 			<key>Start</key>
 			<array>
 				<string>redirect.js</string>
@@ -39,7 +35,16 @@
 	<key>Permissions</key>
 	<dict>
 		<key>Website Access</key>
-		<dict/>
+		<dict>
+			<key>Allowed Domains</key>
+			<array>
+				<string>*.google.com</string>
+				<string>*.bing.com</string>
+				<string>*.yahoo.com</string>
+			</array>
+			<key>Level</key>
+			<string>Some</string>
+		</dict>
 	</dict>
 	<key>Website</key>
 	<string>http://tagboard.com</string>

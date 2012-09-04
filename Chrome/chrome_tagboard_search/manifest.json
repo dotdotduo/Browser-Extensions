@@ -1,12 +1,11 @@
 {
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "description": "Redirect search for hashtags to Tagboard.com.",
   "name": "Tagboard Search",
-  "permissions": ["tabs"],
-  "version": "6",
-  "minimum_chrome_version": "9",
-
-  "manifest_version": 2
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Redirect search for hashtags to Tagboard.com.",
+  "icons": {  "16": "icon16.png",
+              "48": "icon48.png",
+              "128": "icon128.png" },
+  "background": { "scripts": ["background.js"] },
+  "permissions": ["webNavigation"]
 }

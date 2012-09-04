@@ -1,30 +1,14 @@
-function RewriteURL(url) {
-  var r, regex;
+chrome.webNavigation.onBeforeNavigate.addListener(function(details)
+{
+  if (details.frameId == 0) {
+    var r, regex, url = details.url;
 
-  regex = new RegExp("^http://(.*)\\B%23(\\w\\w+)(.*)", "i");
-  r = regex.exec(url);
+    regex = new RegExp("^https?://(.*)(google|bing|yahoo)(.*)\\B%23(\\w+)(.*)", "i");
+    r = regex.exec(url);
 
-  if(r) {
-    return url.replace(regex, "http://search.tagboard.com/$2");
-  }
-
-  return false;
-}
-
-function onTabUpdated(tabId, changeInfo, tab) {
-  var url = changeInfo.url;
-
-  if(url && changeInfo.status=='loading') {
-
-    if(url = RewriteURL(url)) {
-
-      chrome.tabs.update(tabId, { url: url },
-        function(tab){
-          chrome.tabs.executeScript(tabId, { file: "inline.js", allFrames: true }, function(){});
-        });
-      return false;
+    if(r) {
+      url = url.replace(regex, "http://search.tagboard.com/$4");
+      chrome.tabs.update(details.tabId, { url: url });
     }
-  } 
-};
-
-chrome.tabs.onUpdated.addListener(onTabUpdated);
+  }
+});
