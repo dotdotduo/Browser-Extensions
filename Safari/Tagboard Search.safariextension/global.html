@@ -1,0 +1,9 @@
+<html><head><script type="text/javascript" charset="utf-8">
+function respondToMessage(messageEvent) {
+    if (messageEvent.name == "getSettings") {
+        var value = safari.extension.settings.getItem(messageEvent.message);
+        safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("settingValue", value);
+    } 
+}
+safari.application.addEventListener("message", respondToMessage, false);
+</script></head></html>
