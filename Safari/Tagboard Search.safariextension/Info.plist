@@ -9,7 +9,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Tagboard Search</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.tagboard.tagboardsearch</string>
+	<string>com.tagboard.safari.tagboardsearch</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>Description</key>
-	<string>Redirect searches for hashtags to Tagboard.com, and link hashtags around the web.</string>
+	<string>Redirect searches for hashtags to Tagboard.com, and linkify hashtags around the web.</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
