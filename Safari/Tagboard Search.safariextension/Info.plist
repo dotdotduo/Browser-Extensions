@@ -49,6 +49,8 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://raw.github.com/Tagboard/Browser-Extensions/master/Safari/SafariExtensionUpdateManifest.plist</string>
 	<key>Website</key>
 	<string>http://tagboard.com</string>
 </dict>
